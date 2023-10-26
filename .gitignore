@@ -1,0 +1,9 @@
+terraform.exe
+terraform.tfstate.backup
+.terraform/providers/registry.terraform.io/terraform-provider-openstack/openstack/1.52.1/windows_amd64/LICENSE
+.terraform/providers/registry.terraform.io/terraform-provider-openstack/openstack/1.52.1/windows_amd64/README.md
+.terraform/providers/registry.terraform.io/terraform-provider-openstack/openstack/1.52.1/windows_amd64/CHANGELOG.md
+.terraform/providers/registry.terraform.io/terraform-provider-openstack/openstack/1.52.1/windows_amd64/terraform-provider-openstack_v1.52.1.exe
+clouds.yaml
+.terraform.lock.hcl
+terraform.tfstate
