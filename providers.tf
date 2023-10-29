@@ -7,10 +7,9 @@ terraform {
   }
 }
 
-# variable "name" {
-#   type = string
-# }
 
-# variable "num" {
-#   type = number
-# }
+
+variable "instance_count" {
+  type    = number
+  default = 2
+}

@@ -34,13 +34,14 @@ resource "openstack_networking_router_route_v2" "router_route" {
 }
 
 
+resource "openstack_networking_floatingip_v2" "fip" {
+  count = var.instance_count
+  pool = "public"
+}
 
-
-# resource "openstack_networking_floatingip_v2" "fip" {
-#   pool = "172.18.218.0/23"
-# } 
-
-# resource "openstack_compute_floatingip_associate_v2" "fip" {
-#   floating_ip = openstack_networking_floatingip_v2.fip.address
-#   instance_id = openstack_compute_instance_v2.instance.id
-# }
+resource "openstack_compute_floatingip_associate_v2" "fip" {
+  count = var.instance_count
+  
+  floating_ip = element(openstack_networking_floatingip_v2.fip[*].address, count.index)
+  instance_id = openstack_compute_instance_v2.instance[count.index].id
+}
